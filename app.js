@@ -1,6 +1,6 @@
 var Sequelize =require('Sequelize');
 var bcrypt = require('bcryptjs');
-/*
+/*--
 var connection = new Sequelize('UserProf', 'Ivan_Malakhov', 'bars+951',{
   host: 'localhost',
   dialect: 'postgres',
