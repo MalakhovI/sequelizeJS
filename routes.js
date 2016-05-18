@@ -12,10 +12,10 @@ var path = require('path');
 module.exports = function(app) {
 
     // Insert routes below
-    app.use('/users', require('./api/user'));
+    app.use('/users', require('./controler/user'));
 
-    // All undefined asset or api routes should return a 404
-    app.route('/:url(api|auth|components|app|bower_components|assets)/*')
+    // All undefined asset or controler routes should return a 404
+    app.route('/:url(controler|auth|components|app|bower_components|assets)/*')
 
 
     // All other routes should redirect to the index.html

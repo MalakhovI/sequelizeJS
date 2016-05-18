@@ -8,18 +8,22 @@ var express = require('express');
 
 var router = express.Router();
 
+
 router.post('/addUsername', function(req, res){
     console.log('$$$$$$$$$$$$', req.body, req.query, req.params);
-    var db = req.app.get('db');
+  var db = req.app.get('db');
+
+ /* db.sequelize.sync(*/
+/*
     db.User.create({
-      title: 'gggggggggggggggggWWWWWWggggggg',
       firstName:'SWentus',
       lastName:'Jonson',
+      email:'my@email.com',
       password: 'ssdsd ds adsadsad a'
       }).then(function(result){
         console.log('^^^^^^^6', result);
         res.send(result)
-    })
+    })/**/
 });
 //router.post('/createAccount', controller.createAccount);
 

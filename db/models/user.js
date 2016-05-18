@@ -14,16 +14,17 @@ module.exports = function (sequelize, DataTypes) {
             type: Sequelize.STRING
         },
         password: {
-            type: Sequelize.STRING
+            type: Sequelize.STRING,
+            allowNull: false
         },
-        title: {
+        email: {
             type: Sequelize.STRING,
             unique: true,
             allowNull: false,
             validate: {
-                len: {
-                    args: [3, 70],
-                    msg: 'Please enter a title with at least3 chars nut no more then  70 '
+                isEmail: {
+                    args: true,
+                    msg: 'Please enter a email address'
                 }
             }
         },
@@ -31,7 +32,6 @@ module.exports = function (sequelize, DataTypes) {
             type: Sequelize.BOOLEAN,
             defaultValue: false
         }
-
 
     }, {
         hooks: {
@@ -50,3 +50,6 @@ module.exports = function (sequelize, DataTypes) {
     return User;
 };
 
+/*
+connection.sync(
+{force: true},/* - для удаления и создание БД заново */

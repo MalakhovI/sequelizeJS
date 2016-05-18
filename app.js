@@ -20,47 +20,13 @@ server.listen('3000', '0.0.0.0', function () {
 
 // Expose app
 exports = module.exports = app;
-
 app.set('db', db);
 
-//
-//app.post('/addUsername', function(req, res){
-//
-//    console.log('$$$$$$$$$$$$$$$$$$$$$$$', req.body)
-//})
-
-
-
-/*
-app.set('db', db);
-//require('./config/express')(app, config);
-
-
-db.sequelize
-    .sync(
-    //{force: true}
-)
-    .then(function () {
-        app.listen(process.env.PORT || 3000);
-    }).catch(function (e) {
-        throw new Error(e);
-    });
-*/
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+/////////////////////////////////////////////////////////////////////////////////////////////////
 //var Sequelize = require('Sequelize');
 //var bcrypt = require('bcryptjs');
 //
