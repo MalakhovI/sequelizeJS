@@ -14,11 +14,11 @@ router.post('/addUsername', function(req, res){
   var db = req.app.get('db');
 
  /* db.sequelize.sync(*/
-/*
+/**/
     db.User.create({
       firstName:'SWentus',
       lastName:'Jonson',
-      email:'my@email.com',
+      email:'my21@email.com',
       password: 'ssdsd ds adsadsad a'
       }).then(function(result){
         console.log('^^^^^^^6', result);

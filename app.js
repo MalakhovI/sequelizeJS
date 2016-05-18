@@ -7,6 +7,7 @@ var express = require('express'),
 var app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(allowCrossDomain);
 
 
 var server = require('http').createServer(app);
@@ -14,9 +15,19 @@ var server = require('http').createServer(app);
 require('./routes')(app);
 
 // Start server
-server.listen('3000', '0.0.0.0', function () {
-    console.log('Express server listening on %d, in %s mode', '3000', app.get('env'));
+server.listen('9000', '0.0.0.0', function () {
+    console.log('Express server listening on %d, in %s mode', '9000', app.get('env'));
 });
+
+
+
+function allowCrossDomain(req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT, DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Cookie, Authorization');
+    res.header("Access-Control-Allow-Credentials", "true");
+    next();
+}
 
 // Expose app
 exports = module.exports = app;
